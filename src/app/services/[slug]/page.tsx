@@ -36,6 +36,19 @@ const heroImages: Record<string, string> = {
   HVAC: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1920&q=80",
 };
 
+const slugHeroImages: Record<string, string> = {
+  "ac-installation":
+    "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1920&q=80",
+  "emergency-hvac-repair":
+    "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1920&q=80",
+};
+
+const slugFeatureImages: Record<string, string> = {
+  "ac-installation": "/images/serviceAcInstallationServiceHighlights.png",
+  "emergency-hvac-repair":
+    "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1920&q=80",
+};
+
 export async function generateStaticParams() {
   return servicesData.map((s) => ({ slug: s.slug }));
 }
@@ -64,7 +77,8 @@ export default async function ServicePage({
   if (!service) notFound();
 
   const Icon = iconMap[service.icon] || Shield;
-  const heroImage = heroImages[service.category];
+  const heroImage = slugHeroImages[service.slug] || heroImages[service.category];
+  const featureImage = slugFeatureImages[service.slug] || heroImage;
 
   return (
     <>
@@ -157,7 +171,7 @@ export default async function ServicePage({
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               <Image
-                src={heroImage}
+                src={featureImage}
                 alt={`${service.title} service`}
                 fill
                 className="object-cover"

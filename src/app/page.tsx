@@ -27,7 +27,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative flex min-h-screen items-center overflow-hidden bg-[#1a1a1a]">
         <Image
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80"
+          src="/images/HomePageBackgroundPhoto.png"
           alt="Modern luxury home with premium roofing"
           fill
           className="object-cover opacity-30"
@@ -194,10 +194,10 @@ export default function HomePage() {
 
           <AnimatedSection delay={0.15} className="mx-auto max-w-4xl">
             <BeforeAfterSlider
-              beforeSrc="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1200&q=80"
-              afterSrc="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80"
-              beforeAlt="Old damaged roof before repair"
-              afterAlt="New premium roof after replacement"
+              beforeSrc="/images/sliderBefore.png"
+              afterSrc="/images/sliderAfter.png"
+              beforeAlt="Before"
+              afterAlt="After"
             />
           </AnimatedSection>
         </div>
