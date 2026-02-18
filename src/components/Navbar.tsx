@@ -29,7 +29,7 @@ const navLinks = [
 
 function DesktopServicesDropdown() {
   const [open, setOpen] = useState(false);
-  const timeout = useRef<ReturnType<typeof setTimeout>>();
+  const timeout = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   const enter = () => {
     clearTimeout(timeout.current);
