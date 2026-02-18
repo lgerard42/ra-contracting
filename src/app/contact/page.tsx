@@ -33,8 +33,8 @@ export default function ContactPage() {
       <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-16 lg:grid-cols-2">
-            {/* Left - Contact Info */}
-            <div>
+            {/* Left - Contact Info (second on mobile) */}
+            <div className="order-2 lg:order-1">
               <h2 className="mb-8 font-heading text-2xl font-bold uppercase tracking-wide text-[#1a1a1a]">
                 Contact Information
               </h2>
@@ -141,8 +141,8 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Right - Wizard Form */}
-            <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-lg shadow-slate-200/50 lg:p-10">
+            {/* Right - Wizard Form (first on mobile) */}
+            <div className="order-1 rounded-2xl border border-slate-200 bg-white p-8 shadow-lg shadow-slate-200/50 lg:order-2 lg:p-10">
               <h2 className="mb-2 font-heading text-2xl font-bold uppercase tracking-wide text-[#1a1a1a]">
                 Request a Free Quote
               </h2>
